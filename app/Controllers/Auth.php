@@ -13,12 +13,4 @@ class Home extends BaseController
     {
         return view('Auth/signup.php');
     }
-    
-    public function show($symlink = ''): string
-    {
-        $data = [
-            'symlink' => $symlink,
-        ];
-        return view('Post/show.php', $data);
-    }
 }

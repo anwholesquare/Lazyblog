@@ -1,0 +1,93 @@
+CRITICAL - 2024-01-24 09:45:20 --> The namespace delimiter is a backslash (\), not a slash (/). Route handler: "\App\Controllers\Home/show/$1"
+in SYSTEMPATH/Router/Router.php on line 479.
+ 1 SYSTEMPATH/Router/Router.php(479): CodeIgniter\Router\Exceptions\RouterException::forInvalidControllerName('\\App\\Controllers\\Home/show/$1')
+ 2 SYSTEMPATH/Router/Router.php(186): CodeIgniter\Router\Router->checkRoutes('post/dsada')
+ 3 SYSTEMPATH/CodeIgniter.php(823): CodeIgniter\Router\Router->handle('post/dsada')
+ 4 SYSTEMPATH/CodeIgniter.php(450): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 5 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Users/anan/Documents/Projects/Lazyblog/public/index.php')
+CRITICAL - 2024-01-24 09:45:26 --> The namespace delimiter is a backslash (\), not a slash (/). Route handler: "\App\Controllers\Home/show/$1"
+in SYSTEMPATH/Router/Router.php on line 479.
+ 1 SYSTEMPATH/Router/Router.php(479): CodeIgniter\Router\Exceptions\RouterException::forInvalidControllerName('\\App\\Controllers\\Home/show/$1')
+ 2 SYSTEMPATH/Router/Router.php(186): CodeIgniter\Router\Router->checkRoutes('post/dsada')
+ 3 SYSTEMPATH/CodeIgniter.php(823): CodeIgniter\Router\Router->handle('post/dsada')
+ 4 SYSTEMPATH/CodeIgniter.php(450): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 5 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Users/anan/Documents/Projects/Lazyblog/public/index.php')
+CRITICAL - 2024-01-24 09:47:22 --> The namespace delimiter is a backslash (\), not a slash (/). Route handler: "\App\Controllers\Home/show/$1"
+in SYSTEMPATH/Router/Router.php on line 479.
+ 1 SYSTEMPATH/Router/Router.php(479): CodeIgniter\Router\Exceptions\RouterException::forInvalidControllerName('\\App\\Controllers\\Home/show/$1')
+ 2 SYSTEMPATH/Router/Router.php(186): CodeIgniter\Router\Router->checkRoutes('post/dsada')
+ 3 SYSTEMPATH/CodeIgniter.php(823): CodeIgniter\Router\Router->handle('post/dsada')
+ 4 SYSTEMPATH/CodeIgniter.php(450): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 5 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Users/anan/Documents/Projects/Lazyblog/public/index.php')
+CRITICAL - 2024-01-24 09:47:23 --> The namespace delimiter is a backslash (\), not a slash (/). Route handler: "\App\Controllers\Home/show/$1"
+in SYSTEMPATH/Router/Router.php on line 479.
+ 1 SYSTEMPATH/Router/Router.php(479): CodeIgniter\Router\Exceptions\RouterException::forInvalidControllerName('\\App\\Controllers\\Home/show/$1')
+ 2 SYSTEMPATH/Router/Router.php(186): CodeIgniter\Router\Router->checkRoutes('post/dsada')
+ 3 SYSTEMPATH/CodeIgniter.php(823): CodeIgniter\Router\Router->handle('post/dsada')
+ 4 SYSTEMPATH/CodeIgniter.php(450): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 5 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Users/anan/Documents/Projects/Lazyblog/public/index.php')
+CRITICAL - 2024-01-24 09:47:24 --> The namespace delimiter is a backslash (\), not a slash (/). Route handler: "\App\Controllers\Home/show/$1"
+in SYSTEMPATH/Router/Router.php on line 479.
+ 1 SYSTEMPATH/Router/Router.php(479): CodeIgniter\Router\Exceptions\RouterException::forInvalidControllerName('\\App\\Controllers\\Home/show/$1')
+ 2 SYSTEMPATH/Router/Router.php(186): CodeIgniter\Router\Router->checkRoutes('post/dsada')
+ 3 SYSTEMPATH/CodeIgniter.php(823): CodeIgniter\Router\Router->handle('post/dsada')
+ 4 SYSTEMPATH/CodeIgniter.php(450): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 5 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Users/anan/Documents/Projects/Lazyblog/public/index.php')
+CRITICAL - 2024-01-24 09:47:39 --> The namespace delimiter is a backslash (\), not a slash (/). Route handler: "\App\Controllers\Home/show/$1"
+in SYSTEMPATH/Router/Router.php on line 479.
+ 1 SYSTEMPATH/Router/Router.php(479): CodeIgniter\Router\Exceptions\RouterException::forInvalidControllerName('\\App\\Controllers\\Home/show/$1')
+ 2 SYSTEMPATH/Router/Router.php(186): CodeIgniter\Router\Router->checkRoutes('post/dsada')
+ 3 SYSTEMPATH/CodeIgniter.php(823): CodeIgniter\Router\Router->handle('post/dsada')
+ 4 SYSTEMPATH/CodeIgniter.php(450): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 5 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Users/anan/Documents/Projects/Lazyblog/public/index.php')
+CRITICAL - 2024-01-24 09:49:03 --> The namespace delimiter is a backslash (\), not a slash (/). Route handler: "\App\Controllers\Home/signup"
+in SYSTEMPATH/Router/Router.php on line 479.
+ 1 SYSTEMPATH/Router/Router.php(479): CodeIgniter\Router\Exceptions\RouterException::forInvalidControllerName('\\App\\Controllers\\Home/signup')
+ 2 SYSTEMPATH/Router/Router.php(186): CodeIgniter\Router\Router->checkRoutes('signup')
+ 3 SYSTEMPATH/CodeIgniter.php(823): CodeIgniter\Router\Router->handle('signup')
+ 4 SYSTEMPATH/CodeIgniter.php(450): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 5 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Users/anan/Documents/Projects/Lazyblog/public/index.php')
+CRITICAL - 2024-01-24 09:49:22 --> Too few arguments to function App\Controllers\Home::show(), 0 passed in /Users/anan/Documents/Projects/Lazyblog/system/CodeIgniter.php on line 942 and exactly 1 expected
+in APPPATH/Controllers/Home.php on line 17.
+ 1 SYSTEMPATH/CodeIgniter.php(942): App\Controllers\Home->show()
+ 2 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 3 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Users/anan/Documents/Projects/Lazyblog/public/index.php')
+CRITICAL - 2024-01-24 09:49:25 --> Too few arguments to function App\Controllers\Home::show(), 0 passed in /Users/anan/Documents/Projects/Lazyblog/system/CodeIgniter.php on line 942 and exactly 1 expected
+in APPPATH/Controllers/Home.php on line 17.
+ 1 SYSTEMPATH/CodeIgniter.php(942): App\Controllers\Home->show()
+ 2 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 3 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Users/anan/Documents/Projects/Lazyblog/public/index.php')
+CRITICAL - 2024-01-24 09:52:31 --> view(): Argument #2 ($data) must be of type array, string given, called in /Users/anan/Documents/Projects/Lazyblog/app/Controllers/Home.php on line 19
+in SYSTEMPATH/Common.php on line 1178.
+ 1 APPPATH/Controllers/Home.php(19): view('Post/show.php', 'dsad')
+ 2 SYSTEMPATH/CodeIgniter.php(942): App\Controllers\Home->show('dsad')
+ 3 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Users/anan/Documents/Projects/Lazyblog/public/index.php')
+CRITICAL - 2024-01-24 09:52:38 --> view(): Argument #2 ($data) must be of type array, string given, called in /Users/anan/Documents/Projects/Lazyblog/app/Controllers/Home.php on line 19
+in SYSTEMPATH/Common.php on line 1178.
+ 1 APPPATH/Controllers/Home.php(19): view('Post/show.php', 'dsad')
+ 2 SYSTEMPATH/CodeIgniter.php(942): App\Controllers\Home->show('dsad')
+ 3 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Users/anan/Documents/Projects/Lazyblog/public/index.php')
