@@ -137,7 +137,8 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link d-flex align-items-center gap-2" href="#">
+                                <a class="nav-link d-flex align-items-center gap-2"
+                                    href="<?= base_url('dashboard/post') ?>">
                                     <svg class="bi">
                                         <use xlink:href="#file-earmark" />
                                     </svg>
@@ -155,7 +156,8 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link d-flex align-items-center gap-2" href="#">
+                                <a class="nav-link d-flex align-items-center gap-2"
+                                    href="<?= base_url('dashboard/leaderboard') ?>">
                                     <svg class="bi">
                                         <use xlink:href="#cart" />
                                     </svg>
@@ -163,7 +165,8 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link d-flex align-items-center gap-2" href="#">
+                                <a class="nav-link d-flex align-items-center gap-2"
+                                    href="<?= base_url('dashboard/editAuthor') ?>">
                                     <svg class="bi">
                                         <use xlink:href="#people" />
                                     </svg>
@@ -179,37 +182,24 @@
                         </h6>
                         <ul class="nav flex-column mb-auto">
                             <li class="nav-item">
-                                <a class="nav-link d-flex align-items-center gap-2" href="#">
+                                <a class="nav-link d-flex align-items-center gap-2"
+                                    href="<?= base_url('author/') . session()->get('user_id') ?>">
                                     <svg class="bi">
                                         <use xlink:href="#file-earmark-text" />
                                     </svg>
                                     View My Page
                                 </a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link d-flex align-items-center gap-2" href="#">
-                                    <svg class="bi">
-                                        <use xlink:href="#file-earmark-text" />
-                                    </svg>
-                                    View Posts
-                                </a>
-                            </li>
+
 
                         </ul>
 
                         <hr class="my-3">
 
                         <ul class="nav flex-column mb-auto">
+
                             <li class="nav-item">
-                                <a class="nav-link d-flex align-items-center gap-2" href="#">
-                                    <svg class="bi">
-                                        <use xlink:href="#gear-wide-connected" />
-                                    </svg>
-                                    Settings
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link d-flex align-items-center gap-2" href="#">
+                                <a class="nav-link d-flex align-items-center gap-2" href="<?= base_url('logout') ?>">
                                     <svg class="bi">
                                         <use xlink:href="#door-closed" />
                                     </svg>
@@ -290,7 +280,9 @@
                             <label for="category">Category</label>
                             <select class="form-control mt-2" id="category" name="category" required>
                                 <option value="programming">Programming</option>
-                                <option value="tech">Tech</option>
+                                <option value="tech">Apps Review</option>
+                                <option value="tech">Electronics</option>
+                                <option value="tech">Science and Technology</option>
                                 <!-- Add other category options as needed -->
                             </select>
                         </div>

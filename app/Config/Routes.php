@@ -18,7 +18,15 @@ $routes->get('/logout', 'Auth::logout');
 
 $routes->get('/dashboard', 'Auth::dashboard');
 $routes->get('/dashboard/create', 'Auth::createPost');
+$routes->get('/dashboard/post', 'Auth::showpost');
 $routes->post('/dashboard/submitPost', 'Auth::submitPost');
+
+$routes->get('/dashboard/editAuthor', 'Auth::editAuthor');
+$routes->post('/dashboard/submitAuthorContent', 'Auth::submitAuthorContent');
+
+$routes->get('/dashboard/leaderboard', 'Auth::showLeaderboard');
+
 
 
 $routes->get('/post/(:any)', 'Home::show/$1');
+$routes->get('/author/(:any)', 'Home::showAuthor/$1');

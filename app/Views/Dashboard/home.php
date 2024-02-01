@@ -137,7 +137,8 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link d-flex align-items-center gap-2" href="#">
+                                <a class="nav-link d-flex align-items-center gap-2"
+                                    href="<?= base_url('dashboard/post') ?>">
                                     <svg class="bi">
                                         <use xlink:href="#file-earmark" />
                                     </svg>
@@ -155,7 +156,8 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link d-flex align-items-center gap-2" href="#">
+                                <a class="nav-link d-flex align-items-center gap-2"
+                                    href="<?= base_url('dashboard/leaderboard') ?>">
                                     <svg class="bi">
                                         <use xlink:href="#cart" />
                                     </svg>
@@ -163,7 +165,8 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link d-flex align-items-center gap-2" href="#">
+                                <a class="nav-link d-flex align-items-center gap-2"
+                                    href="<?= base_url('dashboard/editAuthor') ?>">
                                     <svg class="bi">
                                         <use xlink:href="#people" />
                                     </svg>
@@ -179,37 +182,24 @@
                         </h6>
                         <ul class="nav flex-column mb-auto">
                             <li class="nav-item">
-                                <a class="nav-link d-flex align-items-center gap-2" href="#">
+                                <a class="nav-link d-flex align-items-center gap-2"
+                                    href="<?= base_url('author/') . session()->get('user_id') ?>">
                                     <svg class="bi">
                                         <use xlink:href="#file-earmark-text" />
                                     </svg>
                                     View My Page
                                 </a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link d-flex align-items-center gap-2" href="#">
-                                    <svg class="bi">
-                                        <use xlink:href="#file-earmark-text" />
-                                    </svg>
-                                    View Posts
-                                </a>
-                            </li>
+
 
                         </ul>
 
                         <hr class="my-3">
 
                         <ul class="nav flex-column mb-auto">
+
                             <li class="nav-item">
-                                <a class="nav-link d-flex align-items-center gap-2" href="#">
-                                    <svg class="bi">
-                                        <use xlink:href="#gear-wide-connected" />
-                                    </svg>
-                                    Settings
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link d-flex align-items-center gap-2" href="#">
+                                <a class="nav-link d-flex align-items-center gap-2" href="<?= base_url('logout') ?>">
                                     <svg class="bi">
                                         <use xlink:href="#door-closed" />
                                     </svg>
@@ -228,7 +218,41 @@
 
 
 
-                <h2>Create a New Blog Post</h2>
+                <h2>Dashboard</h2>
+                <div class="container mt-5">
+                    <div class="row">
+                        <div class="col">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Total Users</h5>
+                                    <p class="card-text">
+                                        <?php echo $usercount[0]['usercount']; ?>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Total Posts</h5>
+                                    <p class="card-text">
+                                        <?php echo $postcount[0]['postcount']; ?>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Total Views</h5>
+                                    <p class="card-text">398</p>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
 
             </main>
         </div>

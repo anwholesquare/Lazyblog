@@ -1,0 +1,160 @@
+INFO - 2024-01-31 23:27:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2024-01-31 23:27:41 --> [DEPRECATED] Creation of dynamic property App\Controllers\Auth::$session is deprecated in APPPATH/Controllers/Auth.php on line 14.
+ 1 SYSTEMPATH/CodeIgniter.php(914): App\Controllers\Auth->__construct()
+ 2 SYSTEMPATH/CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Users/anan/Documents/Projects/Lazyblog/public/index.php')
+INFO - 2024-01-31 23:27:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2024-01-31 23:27:55 --> [DEPRECATED] Creation of dynamic property App\Controllers\Auth::$session is deprecated in APPPATH/Controllers/Auth.php on line 14.
+ 1 SYSTEMPATH/CodeIgniter.php(914): App\Controllers\Auth->__construct()
+ 2 SYSTEMPATH/CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Users/anan/Documents/Projects/Lazyblog/public/index.php')
+ERROR - 2024-01-31 23:27:55 --> Error connecting to the database: mysqli_sql_exception: Connection refused in /Users/anan/Documents/Projects/Lazyblog/system/Database/MySQLi/Connection.php:184
+Stack trace:
+#0 /Users/anan/Documents/Projects/Lazyblog/system/Database/MySQLi/Connection.php(184): mysqli->real_connect('127.0.0.1', 'anan', Object(SensitiveParameterValue), 'lazyblog', 3306, '', 0)
+#1 /Users/anan/Documents/Projects/Lazyblog/system/Database/BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 /Users/anan/Documents/Projects/Lazyblog/system/Database/BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#3 /Users/anan/Documents/Projects/Lazyblog/app/Controllers/Auth.php(58): CodeIgniter\Database\BaseConnection->query('SELECT * FROM u...', Array)
+#4 /Users/anan/Documents/Projects/Lazyblog/system/CodeIgniter.php(942): App\Controllers\Auth->authenticate()
+#5 /Users/anan/Documents/Projects/Lazyblog/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#6 /Users/anan/Documents/Projects/Lazyblog/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /Users/anan/Documents/Projects/Lazyblog/public/index.php(79): CodeIgniter\CodeIgniter->run()
+#8 /Users/anan/Documents/Projects/Lazyblog/system/Commands/Server/rewrite.php(47): require_once('/Users/anan/Doc...')
+#9 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Connection refused in /Users/anan/Documents/Projects/Lazyblog/system/Database/MySQLi/Connection.php:229
+Stack trace:
+#0 /Users/anan/Documents/Projects/Lazyblog/system/Database/BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 /Users/anan/Documents/Projects/Lazyblog/system/Database/BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#2 /Users/anan/Documents/Projects/Lazyblog/app/Controllers/Auth.php(58): CodeIgniter\Database\BaseConnection->query('SELECT * FROM u...', Array)
+#3 /Users/anan/Documents/Projects/Lazyblog/system/CodeIgniter.php(942): App\Controllers\Auth->authenticate()
+#4 /Users/anan/Documents/Projects/Lazyblog/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#5 /Users/anan/Documents/Projects/Lazyblog/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 /Users/anan/Documents/Projects/Lazyblog/public/index.php(79): CodeIgniter\CodeIgniter->run()
+#7 /Users/anan/Documents/Projects/Lazyblog/system/Commands/Server/rewrite.php(47): require_once('/Users/anan/Doc...')
+#8 {main}
+CRITICAL - 2024-01-31 23:27:55 --> Unable to connect to the database.
+Main connection [MySQLi]: Connection refused
+in SYSTEMPATH/Database/BaseConnection.php on line 428.
+ 1 SYSTEMPATH/Database/BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+ 2 APPPATH/Controllers/Auth.php(58): CodeIgniter\Database\BaseConnection->query('SELECT * FROM users WHERE user_name = ?', [...])
+ 3 SYSTEMPATH/CodeIgniter.php(942): App\Controllers\Auth->authenticate()
+ 4 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 5 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Users/anan/Documents/Projects/Lazyblog/public/index.php')
+INFO - 2024-01-31 23:28:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2024-01-31 23:28:41 --> [DEPRECATED] Creation of dynamic property App\Controllers\Auth::$session is deprecated in APPPATH/Controllers/Auth.php on line 14.
+ 1 SYSTEMPATH/CodeIgniter.php(914): App\Controllers\Auth->__construct()
+ 2 SYSTEMPATH/CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Users/anan/Documents/Projects/Lazyblog/public/index.php')
+INFO - 2024-01-31 23:28:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2024-01-31 23:28:47 --> [DEPRECATED] Creation of dynamic property App\Controllers\Auth::$session is deprecated in APPPATH/Controllers/Auth.php on line 14.
+ 1 SYSTEMPATH/CodeIgniter.php(914): App\Controllers\Auth->__construct()
+ 2 SYSTEMPATH/CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Users/anan/Documents/Projects/Lazyblog/public/index.php')
+INFO - 2024-01-31 23:28:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2024-01-31 23:28:47 --> [DEPRECATED] Creation of dynamic property App\Controllers\Auth::$session is deprecated in APPPATH/Controllers/Auth.php on line 14.
+ 1 SYSTEMPATH/CodeIgniter.php(914): App\Controllers\Auth->__construct()
+ 2 SYSTEMPATH/CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Users/anan/Documents/Projects/Lazyblog/public/index.php')
+INFO - 2024-01-31 23:28:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2024-01-31 23:28:59 --> [DEPRECATED] Creation of dynamic property App\Controllers\Auth::$session is deprecated in APPPATH/Controllers/Auth.php on line 14.
+ 1 SYSTEMPATH/CodeIgniter.php(914): App\Controllers\Auth->__construct()
+ 2 SYSTEMPATH/CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Users/anan/Documents/Projects/Lazyblog/public/index.php')
+INFO - 2024-01-31 23:28:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2024-01-31 23:28:59 --> [DEPRECATED] Creation of dynamic property App\Controllers\Auth::$session is deprecated in APPPATH/Controllers/Auth.php on line 14.
+ 1 SYSTEMPATH/CodeIgniter.php(914): App\Controllers\Auth->__construct()
+ 2 SYSTEMPATH/CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Users/anan/Documents/Projects/Lazyblog/public/index.php')
+INFO - 2024-01-31 23:29:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2024-01-31 23:29:02 --> [DEPRECATED] Creation of dynamic property App\Controllers\Auth::$session is deprecated in APPPATH/Controllers/Auth.php on line 14.
+ 1 SYSTEMPATH/CodeIgniter.php(914): App\Controllers\Auth->__construct()
+ 2 SYSTEMPATH/CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Users/anan/Documents/Projects/Lazyblog/public/index.php')
+INFO - 2024-01-31 23:29:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2024-01-31 23:29:04 --> [DEPRECATED] Creation of dynamic property App\Controllers\Auth::$session is deprecated in APPPATH/Controllers/Auth.php on line 14.
+ 1 SYSTEMPATH/CodeIgniter.php(914): App\Controllers\Auth->__construct()
+ 2 SYSTEMPATH/CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Users/anan/Documents/Projects/Lazyblog/public/index.php')
+INFO - 2024-01-31 23:35:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2024-01-31 23:35:52 --> [DEPRECATED] Creation of dynamic property App\Controllers\Auth::$session is deprecated in APPPATH/Controllers/Auth.php on line 14.
+ 1 SYSTEMPATH/CodeIgniter.php(914): App\Controllers\Auth->__construct()
+ 2 SYSTEMPATH/CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Users/anan/Documents/Projects/Lazyblog/public/index.php')
+INFO - 2024-01-31 23:44:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2024-01-31 23:44:20 --> [DEPRECATED] Creation of dynamic property App\Controllers\Auth::$session is deprecated in APPPATH/Controllers/Auth.php on line 14.
+ 1 SYSTEMPATH/CodeIgniter.php(914): App\Controllers\Auth->__construct()
+ 2 SYSTEMPATH/CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Users/anan/Documents/Projects/Lazyblog/public/index.php')
+INFO - 2024-01-31 23:46:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2024-01-31 23:46:12 --> [DEPRECATED] Creation of dynamic property App\Controllers\Auth::$session is deprecated in APPPATH/Controllers/Auth.php on line 14.
+ 1 SYSTEMPATH/CodeIgniter.php(914): App\Controllers\Auth->__construct()
+ 2 SYSTEMPATH/CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Users/anan/Documents/Projects/Lazyblog/public/index.php')
+INFO - 2024-01-31 23:46:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2024-01-31 23:46:25 --> [DEPRECATED] Creation of dynamic property App\Controllers\Auth::$session is deprecated in APPPATH/Controllers/Auth.php on line 14.
+ 1 SYSTEMPATH/CodeIgniter.php(914): App\Controllers\Auth->__construct()
+ 2 SYSTEMPATH/CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Users/anan/Documents/Projects/Lazyblog/public/index.php')
+INFO - 2024-01-31 23:49:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2024-01-31 23:49:00 --> [DEPRECATED] Creation of dynamic property App\Controllers\Auth::$session is deprecated in APPPATH/Controllers/Auth.php on line 14.
+ 1 SYSTEMPATH/CodeIgniter.php(914): App\Controllers\Auth->__construct()
+ 2 SYSTEMPATH/CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Users/anan/Documents/Projects/Lazyblog/public/index.php')
+CRITICAL - 2024-01-31 23:49:00 --> Call to undefined method CodeIgniter\Database\MySQLi\Result::result()
+in APPPATH/Controllers/Auth.php on line 231.
+ 1 SYSTEMPATH/CodeIgniter.php(942): App\Controllers\Auth->submitPost()
+ 2 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 3 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Users/anan/Documents/Projects/Lazyblog/public/index.php')
+INFO - 2024-01-31 23:52:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2024-01-31 23:52:12 --> [DEPRECATED] Creation of dynamic property App\Controllers\Auth::$session is deprecated in APPPATH/Controllers/Auth.php on line 14.
+ 1 SYSTEMPATH/CodeIgniter.php(914): App\Controllers\Auth->__construct()
+ 2 SYSTEMPATH/CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Users/anan/Documents/Projects/Lazyblog/public/index.php')
+CRITICAL - 2024-01-31 23:52:12 --> Call to undefined method CodeIgniter\Database\MySQLi\Result::result_array()
+in APPPATH/Controllers/Auth.php on line 231.
+ 1 SYSTEMPATH/CodeIgniter.php(942): App\Controllers\Auth->submitPost()
+ 2 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 3 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Users/anan/Documents/Projects/Lazyblog/public/index.php')
+INFO - 2024-01-31 23:53:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2024-01-31 23:53:31 --> [DEPRECATED] Creation of dynamic property App\Controllers\Auth::$session is deprecated in APPPATH/Controllers/Auth.php on line 14.
+ 1 SYSTEMPATH/CodeIgniter.php(914): App\Controllers\Auth->__construct()
+ 2 SYSTEMPATH/CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Commands/Server/rewrite.php(47): require_once('/Users/anan/Documents/Projects/Lazyblog/public/index.php')
