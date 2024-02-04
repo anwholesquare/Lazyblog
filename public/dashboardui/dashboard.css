@@ -4,6 +4,15 @@
   height: 1rem;
 }
 
+.btn-primary {
+  background: #36b7ff !important;
+  border: none;
+}
+
+.offcanvas-header {
+  color: white;
+}
+
 .bd-placeholder-img {
   font-size: 1.125rem;
   text-anchor: middle;
@@ -97,14 +106,25 @@
   }
 }
 
+
+.nav {
+  color: inherit;
+}
+
 .sidebar .nav-link {
   font-size: .875rem;
   font-weight: 500;
 }
 
 .sidebar .nav-link.active {
-  color: #2470dc;
+  color: #38B6FF;
 }
+
+.sidebar .nav-link {
+
+  font-size: 16px;
+}
+
 
 .sidebar-heading {
   font-size: .75rem;
@@ -123,4 +143,9 @@
 
 .navbar .form-control {
   padding: .75rem 1rem;
+}
+
+
+.darkmode-toggle {
+  z-index: 1000;
 }

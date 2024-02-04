@@ -110,7 +110,7 @@ class Auth extends Controller
             $newName = '';
             if ($img->isValid() && !$img->hasMoved()) {
                 $newName = $img->getRandomName();
-                $img->move(WRITEPATH . 'uploads', $newName);
+                $img->move(FCPATH . 'public/uploads/', $newName);
             }
 
             $password = $this->request->getVar('password');
@@ -129,7 +129,14 @@ class Auth extends Controller
                 ]);
 
                 if ($result) {
-                    return view("LandingPage/index.php");
+                    $ses_data = [
+                        'user_id' => $db->insertID(),
+                        'user_name' => $this->request->getVar('user_name'),
+                        'email' => $this->request->getVar('email'),
+                        'logged_in' => TRUE
+                    ];
+                    session()->set($ses_data);
+                    return redirect()->route('dashboard');
                 } else {
                     return view('Auth/register.php', ['error' => 'Failed to register. Please try again.']);
                 }
@@ -150,11 +157,18 @@ class Auth extends Controller
             $sql1 = "select count(user_id) as usercount from users;";
             $result1 = $db->query($sql1);
 
+            $sql2 = "select sum(posts.views_count) as totalview, sum(posts.total_seconds_views) as totalsec, max(posts.views_count) as maxreact from `posts` where user_id = ?;";
+            $result2 = $db->query($sql2, [session()->get('user_id')]);
+
+            $sql3 = "select country, count(ip_address) as people  from post_audience where post_id in ( select post_id from posts where user_id = ?) GROUP by country";
+            $result3 = $db->query($sql3, session()->get('user_id'));
 
 
             $data = [
                 'postcount' => $result->getResultArray(),
                 'usercount' => $result1->getResultArray(),
+                'postreach' => $result2->getResultArray(),
+                'countryreach' => $result3->getResultArray()
             ];
             return view("Dashboard/home.php", $data);
         } else {
@@ -173,6 +187,78 @@ class Auth extends Controller
         }
 
     }
+
+    public function editpost($postid)
+    {
+        helper(['auth']);
+        if (isAuthenticated()) {
+            $db = \Config\Database::connect();
+            $sql = "SELECT * FROM `posts` WHERE post_id = ? and user_id = ?";
+
+            // Correct way to pass parameters as an array
+            $result = $db->query($sql, [(int) $postid, (int) session()->get('user_id')]);
+
+            if (count($result->getResultArray()) > 0) {
+
+                $sql = "select * from posts AS p JOIN categories As c ON p.category_id = c.category_id JOIN seo s ON s.seo_id = p.seo_id JOIN users u ON u.user_id = p.user_id where p.post_id = ? group by p.post_id LIMIT 1;";
+                $result = $db->query($sql, [$postid]);
+
+                $sql1 = "Select tag_name from tag where tag_id IN ( Select DISTINCT tag_id from post_tags where post_id  IN ( SELECT post_id from posts where post_id = '$postid'));";
+                $resultTags = $db->query($sql1);
+
+                $sql2 = "select * from posts where user_id  IN ( SELECT user_id from posts where post_id = '$postid');";
+                $recommended = $db->query($sql2);
+
+                $data = [
+                    'post' => $result->getResultArray(),
+                    'tags' => $resultTags->getResultArray(),
+                    'recommended' => $recommended->getResultArray()
+                ];
+                return view("Dashboard/editpostform.php", $data);
+            } else {
+                return redirect()->route("dashboard/post");
+            }
+        } else {
+            return redirect()->route('login');
+        }
+    }
+
+
+    public function updatepost()
+    {
+        helper(['auth']);
+        if (isAuthenticated()) {
+            $postid = (int) $this->request->getVar('postid');
+            $prev = $this->request->getVar('prev_image');
+
+            $coverImage = $this->request->getFile('cover_image');
+            $newName = '';
+            if ($coverImage->isValid() && !$coverImage->hasMoved()) {
+                // Assuming $prev contains the filename of the previous cover_image
+                if (!empty($prev) && file_exists(FCPATH . 'public/uploads/' . $prev)) {
+                    // Remove the previous cover_image file
+                    unlink(FCPATH . 'public/uploads/' . $prev);
+                }
+
+                if ($coverImage->isValid() && !$coverImage->hasMoved()) {
+                    $newName = $coverImage->getRandomName();
+                    $coverImage->move(FCPATH . 'public/uploads/', $newName);
+                }
+            } else {
+                $newName = $prev;
+            }
+
+            $db = \Config\Database::connect();
+            $sql = "UPDATE `posts` SET `title`=?,`description`= ?,`cover_image`= '$newName', `content`= ?, `symlink`= ?, `last_update_datetime`= NOW() WHERE `post_id`= ? and user_id = ?";
+
+            $result = $db->query($sql, [$this->request->getVar('title'), $this->request->getVar('description'), $this->request->getVar('content'), $this->request->getVar('symlink'), $postid, session()->get('user_id')]);
+            //print_r($db->getLastQuery());
+            return redirect()->to(base_url() . "/dashboard/edit/post/$postid");
+        } else {
+            return redirect()->route('login');
+        }
+    }
+
 
     public function showpost()
     {
@@ -215,8 +301,10 @@ class Auth extends Controller
         helper(['auth']);
         if (isAuthenticated()) {
             $db = \Config\Database::connect();
-            $sql = "Replace INTO `author_page`(`user_id`, `page_content`) VALUES (? , '" . $this->request->getVar('content') . "')";
-            $result = $db->query($sql, session()->get("user_id"));
+            $sql = "Replace INTO `author_page`(`user_id`, `page_content`) VALUES (" . (int) session()->get("user_id") . " , " . (string) str_replace('"', "'", ($db->escape($this->request->getVar('content')))) . ")";
+            //print_r($sql);
+            //die();
+            $result = $db->query($sql);
 
             return redirect()->route('dashboard/editAuthor');
         } else {
@@ -230,7 +318,7 @@ class Auth extends Controller
         helper(['auth']);
         if (isAuthenticated()) {
             $db = \Config\Database::connect();
-            $sql = "SELECT u.user_name, count(post_id) as counter FROM `posts` AS p JOIN users AS u ON u.user_id = p.user_id WHERE p. user_id IN (select u.user_id from users) LIMIT 10;";
+            $sql = "select users.user_id as user_id, users.user_name as user_name, users.image, users.registration_datetime as registered , sum(posts.views_count) as counter from users LEFT JOIN posts ON users.user_id = posts.user_id group by users.user_id;";
             $result = $db->query($sql);
 
 
@@ -251,15 +339,11 @@ class Auth extends Controller
         if (isAuthenticated()) {
 
             $input = $this->validate([
-                'title' => 'required|min_length[3]|max_length[30]',
+                'title' => 'required|min_length[3]|max_length[100]',
                 'description' => 'required|max_length[300]',
-                'content' => 'required|max_length[10000]',
+                'content' => 'required',
                 'category' => 'required|max_length[100]',
                 'tags' => 'required|max_length[10000]',
-                'seo_keywords' => 'required|min_length[4]',
-                'seo_title' => 'required|min_length[4]',
-                'seo_short_description' => 'required|min_length[8]',
-                'robot_type' => 'required|min_length[2]'
             ]);
 
             if (!$input) {
@@ -311,7 +395,7 @@ class Auth extends Controller
                     // sym start
 
                     $symlink = $this->request->getVar("symlink");
-                    if (strlen(trim($symlink)) == "") {
+                    if (strlen(trim($symlink)) == "" || $symlink == "" || $symlink == null) {
                         $symlink = random_string('alnum', 20);
                     }
 
@@ -340,8 +424,9 @@ class Auth extends Controller
 
 
                     $sql = "INSERT INTO `posts`( `title`, `description`, `cover_image`, `content`, `symlink`, `seo_id`, `user_id`, `category_id`, `status`) VALUES ('" . $this->request->getVar('title') . "',
-                    '" . $this->request->getVar('description') . "' , '$newName', '" . $this->request->getVar('content') . "', '$symlink', 1, '" . session()->get('user_id') . "', '$categoryId', 'active')";
+                    '" . $this->request->getVar('description') . "' , '$newName', '" . str_replace("'", "", str_replace('"', "*", $db->escape($this->request->getVar('content')))) . "', '$symlink', 1, '" . session()->get('user_id') . "', '$categoryId', 'active')";
 
+                    echo $sql;
                     $result = $db->query($sql);
 
 
@@ -418,7 +503,7 @@ class Auth extends Controller
 
 
 
-                // return redirect()->route('dashboard');
+                return redirect()->route('dashboard/post');
             }
         } else {
             return redirect()->route('login');

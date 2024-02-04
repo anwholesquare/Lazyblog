@@ -26,6 +26,25 @@ class Home extends BaseController
         $sql2 = "select * from posts where user_id  IN ( SELECT user_id from posts where symlink = '$symlink');";
         $recommended = $db->query($sql2);
 
+
+        if (count($result->getResultArray()) > 0) {
+            $getloc = json_decode(file_get_contents("http://ipinfo.io/?token=8cbb16bd050d16"));
+            $request = service('request');
+            $ipAddress = $request->getIPAddress();
+            $dataToUpsert = [
+                (int) $result->getResultArray()[0]['post_id'],
+                (string) $ipAddress,
+                (string) $getloc->country
+            ];
+            $db->query(
+                "REPLACE INTO `post_audience` (`post_id`, `ip_address`, `country`) VALUES (?, ?, ?)",
+                [
+                    (int) $result->getResultArray()[0]['post_id'],
+                    (string) $getloc->ip,
+                    (string) $getloc->country
+                ]
+            );
+        }
         $data = [
             'post' => $result->getResultArray(),
             'tags' => $resultTags->getResultArray(),
@@ -34,20 +53,23 @@ class Home extends BaseController
         return view('Post/show.php', $data);
     }
 
-    public function showAuthor($symlink = ''): string
+    public function showAuthor($symlink = '')
     {
 
         $db = \Config\Database::connect();
-        $sql = "SELECT * from users AS u JOIN author_page AS ap ON u.user_id = ap.user_id WHERE u.user_id = ? LIMIT 1;";
+        $sql = "SELECT u.`user_id`, u.`user_name`, u.`email`, u.`full_name`, u.`bio`, u.`image`, u.`status`, u.`registration_datetime`, u.`last_login`, ap.`page_content`, ap.`updated_datetime` from users AS u LEFT JOIN author_page AS ap ON u.user_id = ap.user_id WHERE u.user_id = ? LIMIT 1;";
         $result = $db->query($sql, [$symlink]);
 
         $sql2 = "select * from posts where user_id = '$symlink'";
         $recommended = $db->query($sql2);
 
+        // if (count($result->getResultArray()) > 0) {
         $data = [
             'author' => $result->getResultArray(),
             'recommended' => $recommended->getResultArray()
         ];
         return view('Author/index.php', $data);
+        //}
+        //return redirect()->route('/');
     }
 }

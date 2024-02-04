@@ -23,6 +23,21 @@
 
 	<div class="container">
 
+		<div class="row">
+			<style>
+				#logocover {
+					display: flex;
+					margin-top: 30px;
+					justify-content: center;
+				}
+			</style>
+			<div id="logocover">
+				<img class="logo-default" src="<?= base_url() ?>/assets/logo.png" style="
+	height:70px;
+" alt="Lazyblog">
+			</div>
+		</div>
+
 		<?php if (session()->getFlashdata('msg')): ?>
 			<div class="alert alert-warning">
 				<?= session()->getFlashdata('msg') ?>
@@ -35,8 +50,8 @@
 				<!-- You can include validation and error alerts here as in the register.php -->
 
 				<div class="card">
-					<div class="card-header bg-success text-white">
-						<h5 class="card-title">Sign In</h5>
+					<div class="card-header text-white">
+						<h5 class="text-black">Sign In</h5>
 					</div>
 					<div class="card-body">
 						<form method="post" action="<?= base_url('login/authenticate') ?>">
@@ -50,18 +65,40 @@
 								<input type="password" class="form-control" id="password" name="password"
 									placeholder="Password" required>
 							</div>
-							<button type="submit" class="btn btn-success">Sign In</button>
+							<button type="submit" class="btn" style="background: #36b7ff; color:white;">Sign In</button>
 						</form>
 					</div>
 				</div>
 
 				<div class="text-center mt-3">
-					<p>Don't have an account? <a href="<?= base_url('register') ?>">Register Here</a></p>
+					<p>Don't have an account? <a href="<?= base_url('register') ?>"
+							style="text-decoration:none">Register Here</a></p>
 				</div>
 
 			</div>
 		</div>
 	</div>
+
+	<script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+	<script>
+		function addDarkmodeWidget() {
+			const options = {
+				bottom: '64px', // default: '32px'
+				right: '32px', // default: '32px'
+				left: 'unset', // default: 'unset'
+				time: '0.5s', // default: '0.3s'
+				mixColor: '#fff', // default: '#fff'
+				backgroundColor: '#fff',  // default: '#fff'
+				buttonColorDark: '#100f2c',  // default: '#100f2c'
+				buttonColorLight: '#fff', // default: '#fff'
+				saveInCookies: true, // default: true,
+				label: '🌓', // default: ''
+				autoMatchOsTheme: true // default: true
+			}
+			new Darkmode(options).showWidget();
+		}
+		window.addEventListener('load', addDarkmodeWidget);
+	</script>
 
 	<!-- Bootstrap Bundle with Popper -->
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
